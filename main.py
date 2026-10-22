@@ -66,47 +66,4 @@ def render_kit_svg(pattern, kit_type="home", primary="#004D98", secondary="#A500
         stripes = "".join([f'<rect x="{x}" y="80" width="12" height="280" fill="{secondary}"/>' for x in range(112, 288, 24)])
         patterns_svg = f'<g clip-path="url(#body-clip)">{stripes}</g>'
     elif pattern == "vertical_wide":
-        stripes = "".join([f'<rect x="{x}" y="80" width="33" height="280" fill="{secondary}"/>' for x in range(133, 267, 66)])
-        patterns_svg = f'<g clip-path="url(#body-clip)">{stripes}</g>'
-    elif pattern == "sash":
-        patterns_svg = f'<polygon points="100,80 140,80 300,320 260,320" fill="{secondary}" clip-path="url(#body-clip)"/>'
-    elif pattern == "vertical":
-        stripes = "".join([f'<rect x="{x}" y="80" width="20" height="280" fill="{secondary}"/>' for x in range(120, 280, 40)])
-        patterns_svg = f'<g clip-path="url(#body-clip)">{stripes}</g>'
-
-    if collar_style == "polo":
-        collar_svg = f'''
-        <path d="M 165,80 L 200,120 L 235,80 L 220,70 L 200,85 L 180,70 Z" fill="{accent}" />
-        <polygon points="185,80 200,120 215,80" fill="#111" opacity="0.3"/>
-        '''
-    elif collar_style == "round":
-        collar_svg = f'''
-        <path d="M 170,80 Q 200,110 230,80" fill="none" stroke="{accent}" stroke-width="8"/>
-        '''
-    else:
-        collar_svg = f'''
-        <path d="M 170,80 L 200,115 L 230,80" fill="none" stroke="{accent}" stroke-width="7"/>
-        '''
-
-    svg_code = f"""
-    <svg viewBox="0 0 400 420" width="100%" height="220" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.6));">
-      <defs>
-        <linearGradient id="fabricGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
-          <stop offset="50%" stop-color="#000000" stop-opacity="0.0"/>
-          <stop offset="100%" stop-color="#000000" stop-opacity="0.35"/>
-        </linearGradient>
-
-        <clipPath id="body-clip">
-          <path d="M 130,80 L 170,80 Q 200,105 230,80 L 270,80 Q 285,130 295,190 L 280,350 L 120,350 L 105,190 Q 115,130 130,80 Z"/>
-        </clipPath>
-
-        <clipPath id="left-sleeve">
-          <path d="M 130,80 L 105,190 L 50,165 L 85,70 Z"/>
-        </clipPath>
-        <clipPath id="right-sleeve">
-          <path d="M 270,80 L 295,190 L 350,165 L 315,70 Z"/>
-        </clipPath>
-      </defs>
-
-      <path d="M 130,80 L 170,80 Q 200,105 230,80 L 270,80 Q 285,130 295,190 L 280,350 L 120,350 L 105,190
+        stripes = "".
